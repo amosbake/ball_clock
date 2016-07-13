@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多边形</title>
+</head>
+<body>
+<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    window.onload = function(){
+
+        var canvas = document.getElementById("canvas");
+
+        canvas.width = 800;
+        canvas.height = 800;
+
+        var context = canvas.getContext("2d")
+
+       drawRect(context,100,100,400,400,10,"#058","red")
+       drawRect(context,300,300,400,400,10,"#058","rgba(0,256,0,0.5")
+
+
+    }
+
+    function drawRect(cxt, x, y, width, height, borderWidth, borderColor, fillColor) {
+        cxt.beginPath()
+        cxt.rect(x,y,width,height)
+        cxt.fillStyle=fillColor
+        cxt.strokeWidth=borderWidth
+        cxt.strokeStyle=borderColor
+        cxt.fill()
+        cxt.stroke()
+    }
+</script>
+
+</body>
+</html>
